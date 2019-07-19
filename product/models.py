@@ -31,6 +31,12 @@ class Category(models.Model):
 
     slug = models.SlugField(blank=True, null=True)
 
+    class Meta:
+
+        verbose_name_plural = "Categories"
+
+        ordering = ('-created',)
+
     def __str__(self):
 
         return self.title
@@ -55,6 +61,10 @@ class Product(models.Model):
     updated = models.DateTimeField(auto_now=True, auto_now_add=False)
 
     slug = models.SlugField(blank=True, null=True)
+
+    class Meta:
+
+        ordering = ('-created')
 
     def __str__(self):
 
