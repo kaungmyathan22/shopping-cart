@@ -15,34 +15,26 @@ def product_list(request):
 
     object_list = Product.objects.all()
 
-    if object_list:
+    paginator = Paginator(object_list, 9)
 
-        paginator = Paginator(object_list, 9)
+    page = request.GET.get('page')
 
-        page = request.GET.get('page')
+    try:
 
-        try:
+        products = paginator.page(page)
 
-            products = paginator.page(page)
+    except PageNotAnInteger:
 
-        except PageNotAnInteger:
+        products = paginator.page(1)
 
-            products = paginator.page(1)
+    except EmptyPage:
 
-        except EmptyPage:
+        products = paginator.page(paginator.num_pages)
 
-            products = paginator.page(paginator.num_pages)
-
-            # products = object_list
-
-        context = {
-            'products': products,
-            'paginator': paginator,
-        }
-
-    else:
-
-        context['products'] = object_list
+    context = {
+        'products': products,
+        'paginator': paginator,
+    }
 
     context['categories'] = Category.objects.all()
 
