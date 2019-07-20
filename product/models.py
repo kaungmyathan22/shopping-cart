@@ -54,6 +54,8 @@ class Product(models.Model):
     description = models.TextField()
 
     image = models.ImageField(
+        null=True,
+        blank=True,
         upload_to=image_upload_path, height_field=None, width_field=None, max_length=None)
 
     created = models.DateTimeField(auto_now=False, auto_now_add=True)
@@ -64,7 +66,7 @@ class Product(models.Model):
 
     class Meta:
 
-        ordering = ('-created')
+        ordering = ('-created',)
 
     def __str__(self):
 
