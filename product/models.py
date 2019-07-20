@@ -2,6 +2,7 @@ from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
 from utils.unique_slug_field_generator import unique_slug_generator, random_string_generator
+from django.urls import reverse
 
 
 def image_upload_path(instance, filename):
@@ -67,6 +68,9 @@ class Product(models.Model):
     class Meta:
 
         ordering = ('-created',)
+
+    def get_absolute_url(self):
+        return reverse('product:detail', kwargs={'slug': self.slug})
 
     def __str__(self):
 
