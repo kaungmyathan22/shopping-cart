@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+
+Products
+
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="container-fluid ">
+    <div class="row">
+
+        <div class="col-md-2 mb-3">
+            <div class="list-group">
+
+
+                <a href="#" class="list-group-item list-group-item-action active">All</a>
+
+                {% for category in categories %}
+
+                <a href="#" class="list-group-item list-group-item-action">{{ category }}</a>
+
+                {% endfor %}
+            </div>
+        </div>
+
+        <div class="col-md-10">
+            <div class="row">
+                {% for product in products %}
+
+                <div class="col-md-4">
+                    <figure class="card card-product">
+                        <div class="img-wrap">
+                            <img src="
+                            
+                            {% if product.image %}
+                                {{product.image.url}}
+                            {% else %}
+                                {% static 'img/no-image.png' %}
+                            {% endif %}
+                            ">
+                        </div>
+                        <figcaption class="info-wrap">
+                            <h4 class="title">
+                                <a href="{% url 'product:detail' slug=product.slug %}">
+                                    {{ product.title }}
+                                </a></h4>
+                            <div class="rating-wrap">
+                                <div class="label-rating">132 reviews</div>
+                                <div class="label-rating">154 orders </div>
+                            </div> <!-- rating-wrap.// -->
+                        </figcaption>
+                        <div class="bottom-wrap">
+                            <a href="" class="btn btn-sm btn-primary float-right">Add to Cart</a>
+                            <div class="price-wrap h5">
+                                <span class="price-new">${{product.price}}</span>
+                            </div> <!-- price-wrap.// -->
+                        </div> <!-- bottom-wrap.// -->
+                    </figure>
+                </div>
+                {% empty %}
+                Sorry, No product in market.
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+
+    {% if products %}
+
+    {% include 'snippets/pagination.html' with page_obj=product %}
+    {% endif %}
+
+</div>
+
+{% endblock content %}
