@@ -31,11 +31,9 @@
         <title>
 
 
+            My Shop |
 
             {% block title %}
-
-
-            My Shop
 
 
             {% endblock title %}
@@ -64,7 +62,7 @@
 
         <!-- Custom -->
 
-
+        <link rel="stylesheet" href="{% static 'style.css' %}">
 
         {% block css %}
 
@@ -86,7 +84,7 @@
 
     <body>
 
-
+        {% include 'snippets/navbar.html' %}
 
         {% block content %}
 
@@ -97,7 +95,7 @@
         {% endblock content %}
 
 
-
+        {% include 'snippets/footer.html' %}
 
 
         <script src="{% static '/jquery/jquery.min.js' %}"></script>
