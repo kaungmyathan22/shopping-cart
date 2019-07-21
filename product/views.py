@@ -11,7 +11,7 @@ from cart.forms import CartAddForm
 
 
 def product_list(request, slug=None):
-    
+
     context = {}
 
     if slug:
@@ -40,6 +40,7 @@ def product_list(request, slug=None):
     context = {
         'products': products,
         'paginator': paginator,
+        'slug': slug
     }
 
     context['categories'] = Category.objects.all()
