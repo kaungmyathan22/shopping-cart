@@ -11,7 +11,7 @@ from cart.forms import CartAddForm
 
 
 def product_list(request, slug=None):
-
+    
     context = {}
 
     if slug:
