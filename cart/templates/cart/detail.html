@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Your Cart
+{% endblock title %}
+
+
+{% block content %}
+<div class="container">
+    <table class="table table-hover">
+        <thead class="bg-success text-white">
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+                <th>Unit Price</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+
+            {% for item in cart %}
+
+            <tr>
+                <td>
+                    {{forloop.counter}}
+                </td>
+                <td>
+                    {{ item.title }}
+                </td>
+                <td>
+                    <form action="{% url 'cart:add' product_slug=item.slug %} " method="POST">
+                        {% csrf_token %}
+                        {{ item.update_form.quantity }}
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </form>
+                </td>
+                <td>
+                    <a href="{% url 'cart:remove' slug=item.slug %}" class="btn btn-danger">Remove</a>
+                </td>
+                <td>
+                    $ {{ item.price}}
+                </td>
+                <td>
+                    $ {{ item.total_price}}
+                </td>
+            </tr>
+
+            {% endfor %}
+
+        </tbody>
+        <tfoot class="bg-success text-white">
+            <tr>
+                <td colspan="5">
+                    Total
+                </td>
+                <td>
+                    $ {{cart.get_total_price}}
+                </td>
+            </tr>
+        </tfoot>
+    </table>
+</div>
+{% endblock content %}

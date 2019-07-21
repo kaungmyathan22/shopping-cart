@@ -1,0 +1,37 @@
+<nav class="navbar navbar-expand-sm navbar-dark bg-success mb-5">
+    <div class="mx-4 my-5">
+        <h1 class="">
+            <a href="" class="text-white font-weight-bold">
+                My Shop
+            </a>
+        </h1>
+    </div>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="mr-auto">
+        </div>
+        <ul class="navbar-nav h5">
+            <li class="nav-item mr-5">
+                <a class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item mr-5">
+                <a class="nav-link" href="{% url 'product:list' %}">Products</a>
+            </li>
+            <li class="nav-item mr-5">
+                <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item mr-5">
+                <a class="nav-link" href="#">Contact</a>
+            </li>
+            <li class="nav-item mr-5 mt-2">
+                <a href="{% url 'cart:detail' %}">
+                    <i class="fa fa-shopping-cart text-white font-weight-bold" aria-hidden="true">
+                        <sub style="font-size: 12px;" class="badge badge-pill badge-secondary">
+                            {{ cart|length }}
+                        </sub>
+                    </i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
