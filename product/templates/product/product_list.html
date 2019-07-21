@@ -22,7 +22,7 @@ Products
 
                 {% for category in categories %}
 
-                <a href="#" class="list-group-item list-group-item-action">{{ category }}</a>
+                <a href="{% url 'product:list' slug=category.slug %}" class="list-group-item list-group-item-action">{{ category }}</a>
 
                 {% endfor %}
             </div>

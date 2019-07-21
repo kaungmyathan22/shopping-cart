@@ -10,11 +10,16 @@ from cart.forms import CartAddForm
 # Create your views here.
 
 
-def product_list(request):
+def product_list(request, slug=None):
 
     context = {}
 
-    object_list = Product.objects.all()
+    if slug:
+
+        object_list = Product.objects.filter(category__slug=slug)
+    else:
+
+        object_list = Product.objects.all()
 
     paginator = Paginator(object_list, 9)
 
