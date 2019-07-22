@@ -40,6 +40,10 @@ def cart_remove(request, slug):
 
     cart = Cart(request)
 
+    if len(cart) <= 0:
+
+        return redirect("product:list")
+
     product = get_object_or_404(Product, slug=slug)
 
     cart.remove(product)
@@ -49,8 +53,14 @@ def cart_remove(request, slug):
 
 def cart_detail(request):
 
+    cart = Cart(request)
+
+    if len(cart) <= 0:
+
+        return redirect("product:list")
+
     context = {
-        'cart': Cart(request),
+        'cart': cart,
     }
 
     # return render(request, 'cart/detail.html')
