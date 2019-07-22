@@ -40,7 +40,7 @@ def product_list(request, slug=None):
     context = {
         'products': products,
         'paginator': paginator,
-        'slug': slug
+        'slug': slug,
     }
 
     context['categories'] = Category.objects.all()
