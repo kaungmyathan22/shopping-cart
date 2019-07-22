@@ -13,7 +13,7 @@ It is a **fictional** Ecommerce site built with Python's *Django* framework - no
 5. Bootstrap
 6. SQLite database
 
-##Checkout this repo, install dependencies, then start the server:
+## Checkout this repo, install dependencies, then start the server:
 
     > git clone https://github.com/arkarhtethan/shopping-cart.git
     > cd shopping-cart
