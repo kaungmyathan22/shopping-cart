@@ -17,6 +17,10 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header = "My Shop Admin"
+admin.site.site_title = "My Shop Admin Portal"
+admin.site.index_title = "Welcome to My Shop Researcher Portal"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('product/', include('product.urls', namespace='product')),

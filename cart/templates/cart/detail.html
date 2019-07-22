@@ -50,8 +50,8 @@ Your Cart
             {% endfor %}
 
         </tbody>
-        <tfoot class="bg-success text-white">
-            <tr>
+        <tfoot class="">
+            <tr class="bg-success text-white">
                 <td colspan="5">
                     Total
                 </td>
@@ -61,5 +61,13 @@ Your Cart
             </tr>
         </tfoot>
     </table>
+    <div>
+        <button class="btn btn-primary d-block mb-3">
+            Checkout
+        </button>
+        <a href="{% url 'product:list' %}" class="btn btn-info">
+            Continue Shopping
+        </a>
+    </div>
 </div>
 {% endblock content %}
