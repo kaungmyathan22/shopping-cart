@@ -15,8 +15,8 @@ It is a **fictional** Ecommerce site built with Python's *Django* framework - no
 
 ##Checkout this repo, install dependencies, then start the server:
 
-    > git clone https://github.com/Ekluv/ecommerce-django.git
-    > cd ecommerce-django
+    > git clone https://github.com/arkarhtethan/shopping-cart.git
+    > cd shopping-cart
     > virtualenv .
     > source bin/activate
     > cd src
@@ -37,11 +37,11 @@ Kaung Myat Han arkarhtethan@gmail.com
 
 Distributed under the XYZ license. See ``LICENSE`` for more information.
 
-[https://github.com/yourname/github-link](https://github.com/dbader/)
+[https://github.com/arkarhtethan/](https://github.com/arkarhtethan/)
 
 ## Contributing
 
-1. Fork it (<https://github.com/yourname/yourproject/fork>)
+1. Fork it (<https://github.com/arkarhtethan/shopping-cart/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
