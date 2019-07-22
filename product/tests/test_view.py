@@ -2,7 +2,7 @@ from django.test import TestCase, Client
 from django.urls import reverse, resolve
 from model_mommy import mommy
 from product.views import product_list, product_detail
-from product.models import Product
+from product.models import Product, Category
 
 
 class TestProductListPage(TestCase):
@@ -44,6 +44,20 @@ class TestProductListPage(TestCase):
         view_fun = resolve(self.url)
 
         self.assertEqual(view_fun.func, product_list)
+
+    def test_category_slug(self):
+
+        for i in range(19):
+
+            mommy.make('Product')
+
+        c = Category.objects.first()
+
+        url = reverse('product:category', kwargs={'slug': c.slug})
+
+        response = self.client.get(url)
+
+        self.assertEqual(response.status_code, 200)
 
 
 class TestProductDetailPage(TestCase):
