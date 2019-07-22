@@ -18,9 +18,7 @@ class Cart:
 
         self.cart = cart
 
-        # self.cart = {}
-
-    def add(self, product, quantity=1, update=False):
+    def add(self, product, quantity=1):
 
         product_id = product.id
 
@@ -29,14 +27,6 @@ class Cart:
             self.cart[product_id] = {
                 'quantity': quantity,
             }
-
-        elif update:
-
-            self.cart[product_id]['quantity'] = quantity
-
-        else:
-
-            pass
 
         self.save()
 
@@ -61,10 +51,6 @@ class Cart:
             del self.cart[product_id]
 
             self.save()
-
-        else:
-
-            raise ValueError("No such product in cart")
 
         return None
 
@@ -106,7 +92,3 @@ class Cart:
             result = result + int(k['quantity'])
 
         return result
-
-    def __str__(self):
-
-        return str(self.cart)
