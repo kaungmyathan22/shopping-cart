@@ -40,3 +40,24 @@
 .description {
     text-align: justify;
 }
+
+.pending {
+    color:red;
+    padding:35px;
+    border:5px solid red;
+    
+}
+.payment-status {
+  transform: rotate(-45deg);
+  transform-origin: 20% 40%;
+  position: relative;
+  margin-top:140px;
+  margin-left:446px
+}
+
+.paid {
+    color:green;
+    padding:35px;
+    border:5px solid;
+    
+}
