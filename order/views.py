@@ -12,11 +12,6 @@ from io import BytesIO
 # Create your views here.
 
 
-def thank_you(request):
-
-    return render(request, 'order/thankyou.html')
-
-
 @require_POST
 def order_create(request):
 
@@ -68,15 +63,6 @@ def checkout(request):
     }
 
     return render(request, 'order/order_create.html', context)
-
-
-def test(request):
-
-    context = {
-        "order": Order.objects.last()
-    }
-
-    return render(request, 'order/pdf.html', context)
 
 
 def download_pdf(request, order_id):
