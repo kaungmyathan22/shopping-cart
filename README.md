@@ -3,7 +3,8 @@
 
 It is a **fictional** Ecommerce site built with Python's *Django* framework - no template was used.
 
-![coverage-image] [![Python Version][python-image]][python-url] [![Django Version](https://img.shields.io/badge/django-2.2-green.svg)](https://shields.io/)
+![coverage-image] [![Python Version][python-image]][python-url] [![Django Version](https://img.shields.io/badge/django-2.2-green.svg)](https://shields.io/) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+
 
 ## Built with 
 1. Django
