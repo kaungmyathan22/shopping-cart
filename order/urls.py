@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import order_create, checkout, thank_you, test, download_pdf
+from .views import order_create, checkout, download_pdf
 
 app_name = "order"
 
