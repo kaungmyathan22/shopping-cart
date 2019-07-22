@@ -10,7 +10,7 @@ class Order(models.Model):
 
     email = models.EmailField()
 
-    phone = models.CharField(max_length=10)
+    phone = models.CharField(max_length=12)
 
     city = models.CharField(max_length=120)
 
@@ -22,9 +22,9 @@ class Order(models.Model):
 
     updated_at = models.DateTimeField(auto_now=True)
 
-    def get_total_cose(self):
+    def get_total_cost(self):
 
-        return sum(item.get_cost() for item in self.items)
+        return sum(item.get_cost() for item in self.items.all())
 
     def __str__(self):
 
