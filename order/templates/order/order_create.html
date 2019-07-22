@@ -15,15 +15,67 @@ Order Create
     </h1>
     <div class="row">
         <div class="col-md-7">
-            <form action="" method="POST">
+            <form action="{% url 'order:create' %}" method="POST">
                 {% csrf_token %}
                 {{ form|crispy}}
                 <button type="submit" class="btn btn-primary">Order Now</button>
             </form>
         </div>
-        <div class="col-md-4 offset-md-1 bg-success">
-            <p class="text-primary h3 text-center">
-                Order Detail
+        <div class="col-md-4 offset-md-1">
+            <p class="text-muted h3 mb-3">
+                Your Cart
+                <div>
+                    <table class="table">
+                        <tr>
+                            <td>
+                                Product
+                            </td>
+                            <td></td>
+                            <td>Quantity</td>
+                            <td></td>
+                            <td>
+                                Price
+                            </td>
+                        </tr>
+
+                        {% for item in cart %}
+                        <tr>
+                            <td>
+
+                                <a href="{{ item.get_absolute_url }}">
+                                    {{ item }}
+                                </a>
+                            </td>
+                            <td>
+                                X
+                            </td>
+                            <td>
+                                {{ item.quantity }}
+                            </td>
+                            <td>
+                                =
+                            </td>
+                            <td>
+                                $ {{ item.total_price }}
+                            </td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td colspan="1">
+
+                            </td>
+                            <td colspan="2">
+                                Total Price
+                            </td>
+                            <td>
+                                =
+                            </td>
+                            <td>
+                                $ {{ cart.get_total_price }}
+                            </td>
+                        </tr>
+                    </table>
+                </div>
             </p>
         </div>
     </div>
