@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Thank you
+{% endblock title %}
+
+
+{% block content %}
+
+<div class="container">
+    <h1>Thank you for working with us</h1>
+    <p>
+        Your order id is {{ order.id }}
+    </p>
+    <p>
+        You can download <a href="{% url 'order:download-pdf' order_id=order.id %}">pdf</a> for your order here.
+    </p>
+</div>
+
+{% endblock content %}
