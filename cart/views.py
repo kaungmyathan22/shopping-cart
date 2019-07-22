@@ -17,17 +17,11 @@ def cart_add(request, product_slug):
 
     if form.is_valid():
 
-        print("form valid")
-
         cd = form.cleaned_data
 
         quantity = cd['quantity']
 
         cart.add(product, quantity=quantity)
-
-    else:
-
-        print("form not valid")
 
     # product = get_object_or_404(Product. slug=product_slug)
 
