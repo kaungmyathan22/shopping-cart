@@ -7,7 +7,7 @@ cssselect2==0.2.1
 defusedxml==0.6.0
 Django==2.2
 django-crispy-forms==1.7.2
-django-debug-toolbar==1.11
+django-debug-toolbar==1.11.1
 html5lib==1.0.1
 model-mommy==1.6.0
 pdfrw==0.4
