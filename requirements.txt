@@ -5,7 +5,7 @@ coverage==4.5.3
 coverage-badge==1.0.1
 cssselect2==0.2.1
 defusedxml==0.6.0
-Django==2.2
+Django==2.2.24
 django-crispy-forms==1.7.2
 django-debug-toolbar==1.11
 html5lib==1.0.1
